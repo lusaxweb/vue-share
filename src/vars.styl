@@ -1,0 +1,27 @@
+:root {
+  --primary: 66, 185, 131
+  --secondary: 53, 73, 94
+}
+
+var(colorx, alpha = 1)
+  unquote("rgba(var(--"+colorx+"), "+alpha+")")
+
+*
+  margin 0px
+  padding 0px
+  list-style none
+  text-decoration none
+  font-family arial
+  box-sizing border-box
+  color var('secondary')
+  outline: none
+
+h1
+  text-align: center
+  padding: 15px
+  // padding-top: 15px
+  font-weight: normal
+  letter-spacing: 2px
+  color: var('secondary')
+
+
