@@ -10,7 +10,7 @@
       </div>
 
       <div class="con-user">
-        <button v-if="user" :class="{'active-submit': $store.state.openSubmit}" @click="toggleSibmit" class="nav-btn-toggle-submit">
+        <button :class="{'active-submit': $store.state.openSubmit}" @click="toggleSibmit" class="nav-btn-toggle-submit">
           Submit
         </button>
 
@@ -181,6 +181,7 @@ export default {
       cursor pointer
       opacity .8
       transition all .25s ease
+      margin-right 5px
       &:hover
         opacity 1
       &.active-submit

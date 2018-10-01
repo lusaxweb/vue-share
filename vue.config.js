@@ -1,6 +1,6 @@
 module.exports = {
   baseUrl: process.env.NODE_ENV === 'production'
-    ? '/vuejsnews/'
+    ? '/vue-share/'
     : '/',
   pwa: {
     name: 'vuejsnews',

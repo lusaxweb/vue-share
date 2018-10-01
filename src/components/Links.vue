@@ -1,31 +1,33 @@
 <template>
-  <ul class="ul-links">
-    <li :key="index" v-for="(link, index) in links">
-      <div class="user-link">
-        <div :title="link.user.displayName" class="con-img-user-link">
-          <img :src="link.user.photoURL" alt="">
-        </div>
-        <span
-          :class="{'not-user': !$store.state.user}"
-          @click="addPoint(link.key, link.points, link.pointsNumber)" class="points-link">
-          <i class="material-icons">
-            keyboard_arrow_up
-          </i>
-          <!-- {{ link.points?Object.keys(link.points).length:0 }} -->
-          {{ link.pointsNumber || 0 }}
-        </span>
-      </div>
-      <a target="_blank" :href="link.href">
-        <h3>
-          {{ link.title }}
-          <span class="user-name">
-            {{ link.user.displayName }}
+  <div>
+    <ul class="ul-links">
+      <li :key="index" v-for="(link, index) in links">
+        <div class="user-link">
+          <div :title="link.user.displayName" class="con-img-user-link">
+            <img :src="link.user.photoURL" alt="">
+          </div>
+          <span
+            :class="{'not-user': !$store.state.user}"
+            @click="addPoint(link.key, link.points, link.pointsNumber)" class="points-link">
+            <i class="material-icons">
+              keyboard_arrow_up
+            </i>
+            <!-- {{ link.points?Object.keys(link.points).length:0 }} -->
+            {{ link.pointsNumber || 0 }}
           </span>
-        </h3>
-        <span class="linkx">{{ link.href }}</span>
-      </a>
-    </li>
-  </ul>
+        </div>
+        <a target="_blank" :href="link.href">
+          <h3>
+            {{ link.title }}
+            <span class="user-name">
+              {{ link.user.displayName }}
+            </span>
+          </h3>
+          <span class="linkx">{{ link.href }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
@@ -96,6 +98,7 @@ export default {
 
 .ul-links
   width 100%
+  min-height calc(100vh - 340px)
   li
     padding 6px 25px
     display flex

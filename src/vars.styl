@@ -1,10 +1,16 @@
 :root {
   --primary: 66, 185, 131
   --secondary: 53, 73, 94
+
+  --width: 400px
+  --font-size: 14px
 }
 
 var(colorx, alpha = 1)
   unquote("rgba(var(--"+colorx+"), "+alpha+")")
+
+varx(varx)
+  unquote("var(--"+varx+")")
 
 *
   margin 0px
@@ -15,6 +21,17 @@ var(colorx, alpha = 1)
   box-sizing border-box
   color var('secondary')
   outline: none
+
+*::-webkit-scrollbar
+  width: 5px;
+  height: 5px;
+
+*::-webkit-scrollbar-thumb
+  background: var('primary', 1)
+  border-radius: 5px;
+
+*::-webkit-scrollbar-thumb:hover
+  background var('primary', .8)
 
 h1
   text-align: center

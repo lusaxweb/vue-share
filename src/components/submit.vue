@@ -4,7 +4,7 @@
       <h2>Submit New Link</h2>
       <input v-model="link.title" placeholder="Title" type="text">
       <input v-model="link.href" placeholder="Url" type="text">
-      <button :disabled="!valid" @click="submit" class="btn-submit">
+      <button @click="submit" class="btn-submit">
         Submit
       </button>
     </div>
@@ -45,7 +45,23 @@ export default {
     }
   },
   methods: {
+    logIn () {
+      var provider = new this.$firebase.auth.GoogleAuthProvider()
+      let self = this
+      // var provider = new this.$firebase.auth.GithubAuthProvider()
+      this.$firebase.auth().signInWithPopup(provider).then(function (result) {
+        console.log('result', result.user)
+        self.$store.state.user = result.user
+      }).catch(function (error) {
+        console.log('error', error)
+      })
+    },
     submit () {
+      if (!this.user) {
+        this.logIn()
+        return
+      }
+
       if (!this.valid && this.$store.state.user) {
         return
       }
@@ -60,6 +76,13 @@ export default {
       this.link.user = user
 
       this.$firebase.database().ref('links/').push(this.link)
+
+      this.link = {
+        href: '',
+        title: '',
+        points: 0,
+        user: {}
+      }
     }
   }
 }
