@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
       <div class="left-nav">
-        <router-link to="/" class="con-logo" exact >Vuejs<b>News</b></router-link>
+        <router-link to="/" class="con-logo" exact >Vue-<b>Share</b></router-link>
         <ul class="nav-links">
           <router-link to="/" exact >New</router-link>
           <router-link to="/top" exact >Top</router-link>

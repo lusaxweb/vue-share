@@ -38,10 +38,10 @@ export default {
   display: block;
   overflow: hidden;
   margin-bottom: 20px;
-  max-width: varx('width');
+  max-width: 350px;
   border-radius: 4px;
   text-align: center;
-  background-color: var('secondary', .05);
+  background-color: var('secondary', .02);
   font-size: varx('font-size');
   line-height: 1.5;
   border-radius 6px
@@ -83,8 +83,8 @@ export default {
 .carbon-img img {
   display: block;
   margin: 0 auto;
-  max-width: 160px !important;
-  width: varx('width');
+  max-width: 130px !important;
+  width: 130px;
   height: auto;
   border-radius 6px
 }
@@ -93,13 +93,13 @@ export default {
   display: block;
   padding: 8px;
   float left
-  width calc(100% - 160px)
+  width calc(100% - 130px)
   position relative
   display flex
   align-items center
   justify-content center
   line-height 20px
-  font-size .8rem
+  font-size .75rem
   color inherit
 }
 
@@ -109,7 +109,7 @@ export default {
   text-transform: uppercase;
   letter-spacing: .5px;
   font-weight: 600;
-  font-size: 9px;
+  font-size: 8px;
   line-height: 0;
 }
 
@@ -131,7 +131,7 @@ export default {
   }
 
   .carbon-img img {
-    max-width: 130px !important;
+    max-width: 120px !important;
   }
   .carbon-text {
     float: left;
