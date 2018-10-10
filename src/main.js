@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './registerServiceWorker'
 import './vars.styl'
+import './responsive.styl'
 import 'material-design-icons/iconfont/material-icons.css'
 import firebase from 'firebase'
 

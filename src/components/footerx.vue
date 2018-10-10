@@ -32,6 +32,8 @@ export default {
     a.github
       font-weight bold
       transition all .25s ease
+      padding 10px
+      display block
       &:hover
         color var('primary')
   .cinta

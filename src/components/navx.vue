@@ -1,7 +1,7 @@
 <template>
     <nav class="nav">
       <div class="left-nav">
-        <router-link to="/" class="con-logo" exact >Vue-<b>Share</b></router-link>
+        <router-link title="vue-share" to="/" class="con-logo" exact >V<span class="r-logo">ue</span><b>S<span class="r-logo">hare</span></b></router-link>
         <ul class="nav-links">
           <router-link to="/" exact >New</router-link>
           <router-link to="/top" exact >Top</router-link>
@@ -10,11 +10,19 @@
       </div>
 
       <div class="con-user">
-        <button :class="{'active-submit': $store.state.openSubmit}" @click="toggleSibmit" class="nav-btn-toggle-submit">
-          Submit
+        <button title="Share" :class="{'active-submit': $store.state.openSubmit}" @click="toggleSibmit" class="nav-btn-toggle-submit">
+          <span class="spanx">Share</span>
+          <i class="material-icons">
+            link
+          </i>
         </button>
 
-        <button v-if="!user" class="liginBtn" @click="logIn">Log In</button>
+        <button title="Log In" v-if="!user" class="liginBtn" @click="logIn">
+          <span class="spanx">Log In</span>
+          <i class="material-icons">
+            power
+          </i>
+        </button>
 
         <div
           v-if="user"
@@ -90,14 +98,22 @@ export default {
     align-items center
     justify-content flex-end
     .liginBtn
-      padding 7px 16px
+      padding 7px 14px
       border-radius 16px
       border 0px
       background var('primary', 1)
       color rgb(255,255,255)
       cursor pointer
-      opacity .8
       transition all .25s ease
+      display flex
+      align-items center
+      justify-content center
+      span
+        color inherit
+      i
+        font-size 1rem
+        color rgb(255,255,255)
+        margin-left 3px
     .nav-con-img-user
       width 30px
       margin-left 10px
@@ -173,7 +189,7 @@ export default {
         top 50%
         transform translate(-50%, -50%)
     .nav-btn-toggle-submit
-      padding 7px 16px
+      padding 7px 14px
       border-radius 16px
       border 0px
       background var('primary', 1)
@@ -182,11 +198,20 @@ export default {
       opacity .8
       transition all .25s ease
       margin-right 5px
+      display flex
+      align-items center
+      justify-content center
+      span
+        color inherit
+      i
+        font-size 1rem
+        color rgb(255,255,255)
+        margin-left 3px
       &:hover
         opacity 1
       &.active-submit
         border-radius 15px 15px 0px 0px !important
-        transform translate(0, 5px)
+        transform translate(0, 3px)
         padding-top 10px
         opacity 1
   .left-nav
@@ -200,6 +225,8 @@ export default {
       position relative
       font-weight bold
       transition all .3s ease
+      span
+        color inherit
       &:after
         content 'beta'
         position absolute

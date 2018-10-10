@@ -1,11 +1,11 @@
 <template>
   <div :style="styleSubmit" ref="consubmit" class="con-submit">
     <div class="submit-inputs">
-      <h2>Submit New Link</h2>
+      <h2>Share New Link</h2>
       <input v-model="link.title" placeholder="Title" type="text">
       <input v-model="link.href" placeholder="Url" type="text">
       <button @click="submit" class="btn-submit">
-        Submit
+        Share Link
       </button>
     </div>
   </div>
